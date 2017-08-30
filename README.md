@@ -8,3 +8,8 @@ The theory being that briankrebs and benimmo's use of Twitter was being
 disrupted by a botnet that was retweeting their account and following them. The
 retweets were collected using [this
 approach](https://gist.github.com/edsu/94901f4a6454805f04fff6d9c10b0b8a).
+
+[csvkit]() is handy for joining the CSVs:
+
+    csvsq': csvsql --query "select briankrebs.* from briankrebs, benimmo where briankrebs.screen_name = benimmo.screen_name" briankrebs.csv bennimo.csv > briankrebs_benimmo.csv
+
