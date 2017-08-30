@@ -1,5 +1,7 @@
 #!/usr/bin/env python 
 
+# rewrite Twitter's datetimes with RFC 3339 formatted datetimes
+
 import csv
 import sys
 
@@ -10,9 +12,9 @@ input_file = sys.argv[1]
 cols = ["screen_name", "followers_count", "friends_count", "statuses_count", "created_at", "lang" ]
 
 output = csv.DictWriter(sys.stdout, cols)
-otuput.writeheader()
+output.writeheader()
 
 for row in csv.DictReader(open(input_file)):
-    row['created_at'] = parse(row['created_at']).strftime("%Y-%m-%dT%H:%M:%S")
+    row['created_at'] = parse(row['created_at']).strftime("%Y-%m-%dT%H:%M:%SZ")
     output.writerow(row)
 
