@@ -1,5 +1,6 @@
 #!/usr/bin/env python 
 
+#
 # rewrite Twitter's created_at datetimes with RFC 3339 formatted datetimes
 #
 # ./dates.py input.csv > output.csv
